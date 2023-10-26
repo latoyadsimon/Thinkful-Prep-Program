@@ -1,0 +1,41 @@
+function allCandyOrders(inventory){
+ let candyToBuy = []; 
+ for ( let i = 0; i < inventory.length; i++){
+    
+
+    if (chosenCandy[j].inStock < chosenCandy[j].weeklyAverage){
+        return chosenCandy[j].weeklyAverage * 2;
+        
+          
+      }else{
+        return 0;
+      }
+    }
+  } else {
+    return 0;
+  }
+
+
+----------------------------------------------------------
+
+function makeArray(inventory){
+  let candyToBuy = [];
+  
+  for (j = 0; j < inventory.length; j ++){
+    
+    
+    console.log(inventory[j].candy + "," + inventory[j].weeklyAverage*2);
+  
+  }
+  
+  
+}
+  
+console.log(makeArray(inventory));  
+
+// returns:
+
+Twizzlers,400
+Sour Patch Kids,200
+Milk Duds,340
+Now and Laters,80

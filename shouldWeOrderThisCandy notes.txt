@@ -1,0 +1,126 @@
+function shouldWeOrderThisCandy (inventory, candyChoice){
+  for ( let i = 0; i < inventory.length; i++){
+    if (inventory[i].candy === candyChoice){
+      if (inventory[i].inStock < inventory[i].weeklyAverage){
+        return true;
+    }else{
+      return false;
+    }
+   }
+  }
+}
+-------------------
+
+
+function shouldWeOrderThisCandy (inventory, candyChoice){
+  for ( let i = 0; i < inventory.length; i++){
+    let chosenCandy = [];
+    if (inventory[i].candy === candyChoice){
+      chosenCandy.push(inventory[i]);
+    }
+  for (let j = 0 ; j < chosenCandy.length; j++){
+    if (chosenCandy[j].inStock < chosenCandy[j].weeklyAverage){
+      return true;
+    }else{
+      return false;
+    }
+   
+  }
+  
+  }
+  chosenCandy.length;
+  if (chosenCandy.length > 0){
+    return true;
+  } else {
+    return false;
+  }
+   
+  
+} 
+
+-------------------------------------
+
+let inventory = [
+  {
+    "candy": "Twizzlers",
+    "inStock": 180,
+    "weeklyAverage": 200
+  },
+  {
+    "candy": "Sour Patch Kids",
+    "inStock": 90,
+    "weeklyAverage": 100
+  },
+  {
+    "candy": "Milk Duds",
+    "inStock": 300,
+    "weeklyAverage": 170
+  },
+  {
+    "candy": "Now and Laters",
+    "inStock": 150,
+    "weeklyAverage": 40
+  }
+]
+
+
+function shouldWeOrderThisCandy (inventory, candyChoice){
+  
+  //first find the candy
+  for ( let i = 0; i < inventory.length; i++){
+    let chosenCandy = [];
+    if (inventory[i].candy === candyChoice){
+      chosenCandy.push(inventory[i]);
+      // if candy is not in stock return false.
+    }
+    if (chosenCandy.length < 1){
+      return false;
+    }
+  }
+  chosenCandy;
+  for (let j = 0 ; j < chosenCandy.length; j++){
+    if (chosenCandy[j].inStock < chosenCandy[j].weeklyAverage){
+      return true;
+    }
+  }  
+  
+}  
+    
+
+
+
+      
+console.log(shouldWeOrderThisCandy (inventory, "Twizzlers"));
+
+---------------------------
+
+function shouldWeOrderThisCandy (inventory, candyChoice){
+    // do we have the candy in our inventory?
+  let chosenCandy = [];
+  
+  for ( let i = 0; i < inventory.length; i++){
+    
+    if (inventory[i].candy === candyChoice){
+      chosenCandy.push(inventory[i]);
+    }
+    
+   // if its not in the inventory, return false.
+  }
+  chosenCandy;
+  if (chosenCandy.length>0){
+    for (let j = 0 ; j < chosenCandy.length; j++){
+      if (chosenCandy[j].inStock < chosenCandy[j].weeklyAverage){
+        return true;
+          
+      }else{
+        return false;
+      }
+    }
+  } else {
+    return false;
+  } 
+}
+-----------------------------------
+
+  
+  

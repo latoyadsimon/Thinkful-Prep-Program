@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20220513T010000Z
+DTEND:20220513T014500Z
+RRULE:FREQ=WEEKLY;INTERVAL=1
+DTSTAMP:20220513T144004Z
+ORGANIZER;CN=jroot@thinkful.com:mailto:jroot@thinkful.com
+UID:v4pb3tng337ov6rt8rgi3s40vc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=1stforgottentoy@gmail.com;X-NUM-GUESTS=0:mailto:1stforgottentoy@gma
+ il.com
+X-MICROSOFT-CDO-OWNERAPPTID:-883109930
+CREATED:20220509T164651Z
+DESCRIPTION:Hi\, can you meet at this time instead?\n\n-::~:~::~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nDo not
+  edit this section of the description.\n\nView your event at https://calend
+ ar.google.com/calendar/event?action=VIEW&eid=djRwYjN0bmczMzdvdjZydDhyZ2kzcz
+ QwdmMgMXN0Zm9yZ290dGVudG95QG0&tok=MTgjanJvb3RAdGhpbmtmdWwuY29tZDM0NGU2YTk5Z
+ TEwMWVhZjgyOTk5OTYyODIzNDY4YzVmNzljNTRlOQ&ctz=America%2FLos_Angeles&hl=en&e
+ s=1.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~::~:~::-
+LAST-MODIFIED:20220513T144003Z
+LOCATION:https://sessions.thinkful.com/jroot
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:First mentor session
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

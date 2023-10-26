@@ -1,0 +1,278 @@
+ function currentlyAvailableCampsites(campgrounds){
+    let availableCamps = [];
+    for (let i =0; i < campgrounds.length; i++){
+      if (campgrounds[i].isReserved === false){
+        availableCamps.push(campgrounds[i]);
+      }
+    }
+    return availableCamps;
+  }
+
+let availableNowCamps = currentlyAvailableCampsites(campgrounds);
+      function partyFits(availableNowCamps, sizeOfParty){
+        let fitsParty = [];
+        for (let j=0; j < availableNowCamps.length; j++){
+          if (availableNowCamps[j].partySize === sizeOfParty){
+        fitsParty.push(availableNowCamps[j]);
+        }
+      }
+      return fitsParty;
+     }
+
+
+function findMyCampsites(campgrounds, viewType, sizeOfParty){
+  let viewFitsParty = partyFits(availableNowCamps, sizeOfParty);
+  let fitsView = [];
+  for (let l = 0; l < viewFitsParty.length; l++){
+    if (viewFitsParty[l].view === viewType){
+      fitsView.push(viewFitsParty[l]);
+    } else if(viewFitsParty[l].view < viewType){
+      fitsView.push(viewFitsParty[l]);
+      return fitsView[l].number;
+    } else if (viewFitsParty === []){
+      return ("Sorry, no campsites with that view are available to host your party");
+    }
+  }
+}
+
+console.log(findMyCampsites(campgrounds, "ocean", 4));
+
+
+
+changes made:::
+let campgrounds = [
+  { number: 1, view: "ocean", partySize: 8, isReserved: false },
+  { number: 5, view: "ocean", partySize: 4, isReserved: false },
+  { number: 12, view: "ocean", partySize: 4, isReserved: true },
+  { number: 18, view: "forest", partySize: 4, isReserved: false },
+  { number: 23, view: "forest", partySize: 4, isReserved: true },
+];
+
+function currentlyAvailableCampsites(campgrounds){
+    let availableCamps = [];
+    for (let i =0; i < campgrounds.length; i++){
+      if (campgrounds[i].isReserved === false){
+        availableCamps.push(campgrounds[i]);
+      }
+    }
+    return availableCamps;
+  }
+
+let availableNowCamps = currentlyAvailableCampsites(campgrounds);
+      function partyFits(availableNowCamps, sizeOfParty){
+        let fitsParty = [];
+        for (let j=0; j < availableNowCamps.length; j++){
+          if (availableNowCamps[j].partySize === sizeOfParty){
+        fitsParty.push(availableNowCamps[j]);
+          }
+          else if (availableNowCamps[j].partySize < sizeOfParty){
+            fitsParty.push(availableNowCamps[j]);
+          }
+          return fitsParty;
+      }    
+     }
+more changes made:::: i had used <, instead of > on the partysizes
+
+function findMyCampsites(campgrounds, viewType, sizeOfParty){
+  let viewFitsParty = partyFits(availableNowCamps, sizeOfParty);
+  let fitsView = [];
+  for (let l = 0; l < viewFitsParty.length; l++){
+    if (viewFitsParty[l].view === viewType){
+      fitsView.push(viewFitsParty[l]);
+      return fitsView[l].number;
+    } else {
+    return ("Sorry, no campsites with that view are available to host your party");
+    }
+  }
+}
+
+console.log(findMyCampsites(campgrounds, "ocean", 4));------------------
+-------------------------------------------------------
+function currentlyAvailableCampsites(campgrounds){
+    let availableCamps = [];
+    for (let i =0; i < campgrounds.length; i++){
+      if (campgrounds[i].isReserved === false){
+        availableCamps.push(campgrounds[i]);
+      }
+    }
+    return availableCamps;
+  }
+
+let availableNowCamps = currentlyAvailableCampsites(campgrounds);
+      function partyFits(availableNowCamps, sizeOfParty){
+        let fitsParty = [];
+        for (let j=0; j < availableNowCamps.length; j++){
+          if (availableNowCamps[j].partySize === sizeOfParty){
+        fitsParty.push(availableNowCamps[j]);
+          }
+          if (availableNowCamps[j].partySize > sizeOfParty){
+            fitsParty.push(availableNowCamps[j]);
+          }
+          
+        }  
+        return fitsParty; 
+      }
+//console.log(partyFits(availableNowCamps, 8));
+
+________________________________up to this point works^^^^^
+
+function findMyCampsites(campgrounds, viewType, sizeOfParty){
+  let viewFitsParty = partyFits(availableNowCamps, sizeOfParty);
+  let fitsView = [];
+  for (let l = 0; l < viewFitsParty.length; l++){
+    if (viewFitsParty[l].view === viewType){
+      fitsView.push(viewFitsParty[l]);
+      return fitsView[l].number;
+    } else {
+    return ("Sorry, no campsites with that view are available to host your party");
+    }
+  }
+}
+
+-------------------------------
+came back later:
+
+function findMyCampsites(campgrounds, viewType, sizeOfParty){
+  currentlyAvailableCampsites(campgrounds);
+  partyFits(availableNowCamps, sizeOfParty);
+  
+  let viewFitsParty = partyFits(availableNowCamps, sizeOfParty);
+  let fitsView = [];
+  for (let l = 0; l < viewFitsParty.length; l++){
+    if (viewFitsParty[l].view === viewType){
+      fitsView.push(viewFitsParty[l].number);
+      return fitsView;
+    } else {
+    return ("Sorry, no campsites with that view are available to host your party");
+    }
+  }
+}
+-----------------
+
+let fitsParty = partyFits(availableNowCamps, sizeOfParty);
+      function availPartyView(fitsParty, viewType){
+        let request = [];
+        for (let k = 0; k < fitsParty.length; k++){
+          if(fitsParty.view = viewType){
+            request.push(fitsParty[k].number);
+          }
+        }
+        return fitsParty;
+      }
+noooooooooo
+
+__________
+lets try to turn it around. 
+lets pick out the view and partysize, then check to see if its available
+
+function viewFinder (campgrounds, viewType, sizeOfParty){
+let request = [];
+    for (i =0; i < campgrounds.length; i++){
+        if (campgrounds[i].view === viewType){
+            if (campgrounds[i].partySize === sizeOfParty){
+                request.push(campgrounds.number);
+
+
+---------------
+function viewFinder (campgrounds, viewType, sizeOfParty){
+  let request = [];
+  for (i =0; i < campgrounds.length; i++){
+    if (campgrounds[i].partySize === sizeOfParty){
+      request.push(campgrounds.number);
+    }
+    if (campgrounds[i].partySize > sizeOfParty){
+      request.push(campgrounds[i].number);
+    }
+    if (campgrounds[i].view === viewType){
+      request.push(campgrounds.number)
+    }
+    return request;
+  }
+}
+----------------------------------------------------
+
+let campgrounds = [
+  { number: 1, view: "ocean", partySize: 8, isReserved: false },
+  { number: 5, view: "ocean", partySize: 4, isReserved: false },
+  { number: 12, view: "ocean", partySize: 4, isReserved: true },
+  { number: 18, view: "forest", partySize: 4, isReserved: false },
+  { number: 23, view: "forest", partySize: 4, isReserved: true },
+];
+
+
+function findMyCampsites (campgrounds, viewType, sizeOfParty){
+  let viewWanted = [];
+  let partySizes = [];
+  let request = [];
+  for (let i =0; i < campgrounds.length; i++){
+    if (campgrounds[i].partySize === sizeOfParty){
+      partySizes.push(campgrounds[i]);
+    }
+    if (campgrounds[i].partySize > sizeOfParty){
+      partySizes.push(campgrounds[i]);
+    }
+  }
+  
+  for (let j = 0; j < partySizes.length; j++){
+    if (partySizes[j].view === viewType){
+      viewWanted.push(partySizes[j]);
+    }
+  }
+
+  for (let n = 0; n < viewWanted.length; n++){
+    if (viewWanted[n].isReserved === false){
+      request.push(viewWanted[n].number);
+    }
+  }
+  return request;
+}
+
+console.log(findMyCampsites (campgrounds, "forest", 4))
+
+
+))))this works!!!! but it doesn't return the sorry statement.
+
+
+----------------------------
+ function findMyCampsites (campgrounds, viewType, sizeOfParty){
+  let viewWanted = [];
+  let partySizes = [];
+  let request = [];
+  for (let i =0; i < campgrounds.length; i++){
+    if (campgrounds[i].partySize === sizeOfParty){
+      partySizes.push(campgrounds[i]);
+    }
+    if (campgrounds[i].partySize > sizeOfParty){
+      partySizes.push(campgrounds[i]);
+    }
+  }
+  
+  for (let j = 0; j < partySizes.length; j++){
+    if (partySizes[j].view === viewType){
+      viewWanted.push(partySizes[j]);
+    }
+  }
+
+  for (let n = 0; n < viewWanted.length; n++){
+    if (viewWanted[n].isReserved === false){
+      request.push(viewWanted[n].number);
+    }
+  }
+  request.length;
+  if (request.length >0){
+    return request;
+  }else{
+    return "Sorry, no campsites with that view are available to host your party";
+    
+  }
+  
+}
+
+
+
+console.log(findMyCampsites (campgrounds, "ocean", 20))
+
+this works in replit!!!!!!!!!!!!!!!!!!!!!
+
+
+

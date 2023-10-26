@@ -1,0 +1,192 @@
+let inventory = [
+  {
+    "candy": "Twizzlers",
+    "inStock": 180,
+    "weeklyAverage": 200
+  },
+  {
+    "candy": "Sour Patch Kids",
+    "inStock": 90,
+    "weeklyAverage": 100
+  },
+  {
+    "candy": "Milk Duds",
+    "inStock": 300,
+    "weeklyAverage": 170
+  },
+  {
+    "candy": "Now and Laters",
+    "inStock": 150,
+    "weeklyAverage": 40
+  }
+]
+
+
+//need to use this as my helper function:
+
+function candyOrderQuantity (inventory, candyChoice){
+    // do we have the candy in our inventory?
+  let chosenCandy = [];
+  
+  for ( let i = 0; i < inventory.length; i++){
+    
+    if (inventory[i].candy === candyChoice){
+      chosenCandy.push(inventory[i]);
+    }
+    
+   // if its not in the inventory, return 0
+  }
+  chosenCandy;
+  if (chosenCandy.length>0){
+    for (let j = 0 ; j < chosenCandy.length; j++){
+      if (chosenCandy[j].inStock < chosenCandy[j].weeklyAverage){
+        return chosenCandy[j].weeklyAverage * 2;
+          
+      }else{
+        return 0;
+      }
+    }
+  } else {
+    return 0;
+  } 
+} 
+
+
+-------------------------
+function makeArray(inventory){
+  let candyToBuy = [];
+  
+  for (j = 0; j < inventory.length; j ++){
+    if (inventory[j].inStock < inventory[j].weeklyAverage){
+      console.log(inventory[j].candy + "," + inventory[j].weeklyAverage*2);
+      }else{
+        console.log(inventory[j].candy + "," + 0);
+      }
+    
+  
+  }
+  
+  
+}
+  
+console.log(makeArray(inventory)); 
+
+
+----------------
+
+came back later
+
+
+function makeArray(inventory){
+  let candyToBuy = [];
+  
+  for (j = 0; j < inventory.length; j ++){
+    if (inventory[j].inStock < inventory[j].weeklyAverage){
+      candyToBuy.push(inventory[j].candy, inventory[j].weeklyAverage*2);
+      }else{
+        candyToBuy.push(inventory[j].candy, 0);
+      }
+    
+  
+  }
+  return candyToBuy;
+  
+  
+}
+
+// this makes:
+[
+  'Twizzlers',
+  400,
+  'Sour Patch Kids',
+  200,
+  'Milk Duds',
+  0,
+  'Now and Laters',
+  0
+]
+
+
+
+
+-----
+inventory[4] = {candy: inventory.weeklyAverage};
+
+console.log(inventory);
+
+
+----------------
+
+let candyName = inventory[0].candy;
+let num1 = inventory[0].weeklyAverage*2;
+let num2 = 0;
+
+inventory[4] = {candyName: num1};
+
+console.log(inventory);
+
+---------------------------
+
+
+function allCandyOrders(inventory){
+  let amount = 0;
+  let candyName = 0;
+  let orders = {"candyName":amount};
+  
+  for (let i = 0; i <inventory.length; i++){
+    
+   orders.candyName = inventory[i].candy;
+    for (let j = 0; j < inventory.length; j++){
+      let amount = inventory[j].weeklyAverage*2;
+      
+      
+    }
+   
+  }
+  return orders;
+  
+} 
+
+console.log (allCandyOrders(inventory));
+
+this returns:
+{ candyName: 'Now and Laters' }
+
+
+// this one gets the candy
+function getCandy(inventory){
+  for (let i =0; i< inventory.length; i++){
+    let candyInventory = inventory[i].candy;
+    console.log (candyInventory);
+  }
+}
+//this one gets the weekly average to order
+function getAmount(inventory){
+  
+  for (let j = 0; j<inventory.length; j++){
+    
+    if (inventory[j].inStock < inventory[j].weeklyAverage){
+     
+      console.log(inventory[j].weeklyAverage*2);
+          
+    }else{
+  
+      console.log(inventory[j].weeklyAverage*0);
+    
+    }
+  }
+}
+
+returns:
+
+Twizzlers
+Sour Patch Kids
+Milk Duds
+Now and Laters
+undefined
+400
+200
+0
+0
+
+

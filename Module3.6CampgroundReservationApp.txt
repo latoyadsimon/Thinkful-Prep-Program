@@ -1,0 +1,147 @@
+Module 3.6 Scenario: Campground Reservation App. finished on May 26, 2022, started on May 22nd.....
+
+1
+* Write a function called `campsiteCount`
+ * */
+let campgrounds = [
+  { number: 1, view: "ocean", partySize: 8, isReserved: false },
+  { number: 5, view: "ocean", partySize: 4, isReserved: false },
+  { number: 12, view: "ocean", partySize: 4, isReserved: true },
+  { number: 18, view: "forest", partySize: 4, isReserved: false },
+  { number: 23, view: "forest", partySize: 4, isReserved: true },
+];
+
+function campsiteCount(campgrounds){
+    return campgrounds.length;
+}
+
+
+
+
+2
+
+* Write a function named `campgroundCapacity`
+ */
+
+//-make a function that adds them all together.
+
+function campgroundCapacity(campgrounds){
+    let sum = 0;
+    for (let i = 0; i < campgrounds.length; i ++){
+        sum = sum + campgrounds[i].partySize;
+    }
+    return sum;
+}
+
+
+
+
+3
+ * Write a function named `availableCampsites`
+ */
+function availableCampsites(campgrounds){
+    let currentlyAvailableCampsites = [];
+  
+    for (let i = 0; i < campgrounds.length; i++){
+        if (campgrounds[i].isReserved === false){
+          currentlyAvailableCampsites.push(campgrounds[i]);
+        }
+    }
+    return currentlyAvailableCampsites;
+}
+
+
+
+
+
+4
+* Write a function named `additionalCapacity`
+ */
+function additionalCapacity(campgrounds){
+  let sum = 0;
+  for (let i =0; i < campgrounds.length; i++){
+    if (campgrounds[i].isReserved === false){
+      sum = sum + campgrounds[i].partySize;
+    }
+  }
+  return sum;
+}
+
+
+
+
+
+
+5
+ * Write a function named `countByView`
+ */
+let campgrounds = [
+  { number: 1, view: "ocean", partySize: 8, isReserved: false },
+  { number: 5, view: "ocean", partySize: 4, isReserved: false },
+  { number: 12, view: "ocean", partySize: 4, isReserved: true },
+  { number: 18, view: "forest", partySize: 4, isReserved: false },
+  { number: 23, view: "forest", partySize: 4, isReserved: true },
+];
+
+function countByView(campgrounds,viewType){
+    let count = 0;
+    for (let i = 0; i < campgrounds.length; i++){
+        if (campgrounds[i].view === viewType){
+            count= count + 1;
+        }
+    }
+    return count;
+}
+
+
+
+
+6
+
+* Write a function named `findMyCampsites`
+ */
+let campgrounds = [
+  { number: 1, view: "ocean", partySize: 8, isReserved: false },
+  { number: 5, view: "ocean", partySize: 4, isReserved: false },
+  { number: 12, view: "ocean", partySize: 4, isReserved: true },
+  { number: 18, view: "forest", partySize: 4, isReserved: false },
+  { number: 23, view: "forest", partySize: 4, isReserved: true },
+];
+
+
+ function findMyCampsites (campgrounds, viewType, sizeOfParty){
+  let viewWanted = [];
+  let partySizes = [];
+  let request = [];
+  for (let i =0; i < campgrounds.length; i++){
+    if (campgrounds[i].partySize === sizeOfParty){
+      partySizes.push(campgrounds[i]);
+    }
+    if (campgrounds[i].partySize > sizeOfParty){
+      partySizes.push(campgrounds[i]);
+    }
+  }
+  
+  for (let j = 0; j < partySizes.length; j++){
+    if (partySizes[j].view === viewType){
+      viewWanted.push(partySizes[j]);
+    }
+  }
+
+  for (let n = 0; n < viewWanted.length; n++){
+    if (viewWanted[n].isReserved === false){
+      request.push(viewWanted[n].number);
+    }
+  }
+  request.length;
+  if (request.length >0){
+    return request;
+  }else{
+    return "Sorry, no campsites with that view are available to host your party";
+    
+  }
+  
+}
+
+
+one array, and use 3 if statements

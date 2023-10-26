@@ -1,0 +1,78 @@
+Take-home: School shopping
+Part 1: Check cart price
+
+
+Create a function named cartPrice to find the total cost of all the items in the shopping cart.
+
+The function should do the following:
+
+Accept an array of items as its argument
+Return the total cost of the items, as a number
+
+
+funtion cartPrice(items){
+    let sum = 0;
+    for(let i =0; i < items.length; i++) {
+        sum = sum + items[i].price;
+    }
+    return sum;
+}
+
+
+
+Take-home: School shopping
+Part 2: Most expensive item
+This is part 2. In this challenge, you'll write a function to find the name of the most expensive item in a shopping cart.
+
+reate a function named mostExpensiveItemName to find the name of the highest-priced item in the shopping cart .
+
+The function should do the following:
+
+Accept an array of items as its argument
+Return the name of the most expensive item, as a string
+
+
+function mostExpensiveItemName(items){
+    let mostExpensive = 0,
+    for ( let i = 0; i < items.length; i++){
+        if(mostExpensive === 0) {
+            mostExpensive = items[i].price;
+        }
+        if (mostExpensive < items[i].price){
+            mostExpensive = items[i].price;
+        }
+        if (mostExpensive === items[i].price){
+            return items[i].name;
+        }
+     }
+}
+
+
+
+
+function mostExpensiveItemName(items){
+  let sum = 0;
+  let name = undefined;
+  for (let i = 0; i < items.length; i++){
+    if (sum === 0){
+      sum = items[i].price;
+      name = items[i].itemName;
+    }
+    if (sum < items[i].price){
+    
+      sum = items[i].price;
+      name = items[i].itemName;  
+    }else{
+    sum = sum;
+    }
+  }
+  sum;
+  for (let j = 0; j < items.length; j++){
+    if(sum === items[j].price){
+      return items[j].itemName;
+    }
+  }
+    
+  
+  
+}

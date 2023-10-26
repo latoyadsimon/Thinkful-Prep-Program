@@ -1,0 +1,199 @@
+module 3.7 
+Scenario: Inventory help
+
+1.
+Create a function called countCandyTypes that takes in:
+
+the inventory array
+Return the number of objects in the array, which should be the number of types of candy.
+
+
+function countCandyTypes(inventory){
+  return inventory.length;
+}
+
+
+2.
+We want to know how many units we have in total (all candies). Create a function called totalInStock that takes in:
+
+the inventory array
+Add up the inStock value from each candy.
+
+Return the total number of candies in stock.
+
+
+function totalInStock (inventory){
+  let sum = 0;
+  for (let i = 0; i < inventory.length; i++){
+    sum = sum + inventory[i].inStock;
+  }
+  return sum;
+}
+
+
+3.
+
+We are getting new candies to sell, and we need to add them to our inventory array.
+
+Create a function called addCandyToInventory that takes in:
+
+the inventory array
+a new candy object
+Add the new candy object to the end of the array.
+Return the updated inventory array with the new candy object added to the end.
+
+Note: Make sure you return the array from the function. Don't just change the array!
+
+
+function addCandyToInventory (inventory, newCandy){
+  inventory.push(newCandy);
+  return inventory;
+}
+
+
+4.
+We want to know whether to order a particular candy. We should make an order if the total number in stock (inStock) is less than the weekly average sold (weeklyAverage).
+
+Create a function called shouldWeOrderThisCandy that takes in:
+
+the inventory array
+a specific type of candy (string)
+The function should find the candy in the array that matches the name passed in.
+
+When that candy is found, return true if the number inStock is less than the weeklyAverage. Otherwise, return false.
+
+If the array doesn't have any candy with that name, return false.
+
+
+
+// We should make an order if the total number in stock (inStock) is less than the weekly average sold (weeklyAverage).
+
+
+function shouldWeOrderThisCandy (inventory, candyChoice){
+    // do we have the candy in our inventory?
+  let chosenCandy = [];
+  
+  for ( let i = 0; i < inventory.length; i++){
+    
+    if (inventory[i].candy === candyChoice){
+      chosenCandy.push(inventory[i]);
+    }
+    
+   // if its not in the inventory, return false.
+  }
+  chosenCandy;
+  if (chosenCandy.length>0){
+    for (let j = 0 ; j < chosenCandy.length; j++){
+      if (chosenCandy[j].inStock < chosenCandy[j].weeklyAverage){
+        return true;
+          
+      }else{
+        return false;
+      }
+    }
+  } else {
+    return false;
+  } 
+}
+  
+ one loop and a nested if statement, one to check on the candy and one to check on the weeklyaverage 
+5.
+We need to know how much of a candy to order.
+
+If we have enough in stock (if inStock is greater than weeklyAverage), we should order zero.
+If we don't have enough in stock, we should order two times the weekly average for that candy.
+Write a function candyOrderQuantity that takes two arguments:
+
+the inventory array
+a candy name (string)
+Return the amount of that candy that we should order.
+
+If there is no candy with that name in the array, return 0.
+
+
+
+function candyOrderQuantity (inventory, candyChoice){
+    // do we have the candy in our inventory?
+  let chosenCandy = [];
+  
+  for ( let i = 0; i < inventory.length; i++){
+    
+    if (inventory[i].candy === candyChoice){
+      chosenCandy.push(inventory[i]);
+    }
+    
+   // if its not in the inventory, return 0
+  }
+  chosenCandy;
+  if (chosenCandy.length>0){
+    for (let j = 0 ; j < chosenCandy.length; j++){
+      if (chosenCandy[j].inStock < chosenCandy[j].weeklyAverage){
+        return chosenCandy[j].weeklyAverage * 2;
+          
+      }else{
+        return 0;
+      }
+    }
+  } else {
+    return 0;
+  } 
+} 
+
+
+
+6.
+In the last challenge (candyOrderQuantity), you wrote a function to tell how many of one particular candy to order this week.
+
+Now, you'll write a function to tell how many of all the candies to order.
+
+Write a function allCandyOrders that takes one argument:
+
+the inventory array
+allCandyOrders should return an order object. The keys should be the names of the candies, and the values should be the amounts to be ordered that week.
+
+The amount to order each week should use the same formula as the candyOrderQuantity function.
+
+Formula:
+
+if inStock is greater than weeklyAverage, order zero.
+if inStock is less than weeklyAverage, order two times the weeklyAverage.
+
+
+let orders = {};
+
+
+function allCandyOrders(inventory){
+  
+  if (inventory.length>0){
+    for (let i = 0; i <inventory.length; i++){
+      if (inventory[i].inStock < inventory[i].weeklyAverage){
+        let amount = inventory[i].weeklyAverage*2;
+        orders[inventory[i].candy] = amount;
+        
+        
+    
+        }else{
+          let amount = inventory[i].weeklyAverage*0;
+          orders[inventory[i].candy] = amount;
+          
+        }
+    }
+    
+  }else{
+    let amount = null;
+    orders = {};
+    
+  }
+  return orders;
+  
+ 
+}
+  
+   
+
+if you have more than one return in the function, they need to be within an if statement
+
+
+
+
+

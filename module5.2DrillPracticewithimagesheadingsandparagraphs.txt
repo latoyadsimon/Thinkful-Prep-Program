@@ -1,0 +1,24 @@
+Drill: Practice with images, headings, and paragraphs
+html practice project
+06/04/2022
+
+
+
+<img src="crow.jpg" alt="Black Crow" width="600px">
+
+<h1>The Wizard of Oz</h1>
+
+<h2>The Search for the Wicked Witch</h2>
+
+<h3>Chapter 12</h3>
+
+<img src="scarecrow.jpg" alt="Black Cloak creating a Scarecrow in Woods" width="600px">
+
+<p>And the Wicked Witch said to the King Crow, "Fly at once to the strangers; peck out their eyes and tear them to pieces."</p>
+
+<p>But the Scarecrow said, "This is my battle, so lie down beside me and you will not be harmed."</p>
+
+<p>So they all lay upon the ground except the Scarecrow, and he stood up and stretched out his arms. And when the crows saw him they were frightened, as these birds always are by scarecrows, and did not dare to come any nearer.</p>
+
+
+<h4>(Crow & Scarecrow Photos by Dimitar Donovski on Unsplash)</h4>

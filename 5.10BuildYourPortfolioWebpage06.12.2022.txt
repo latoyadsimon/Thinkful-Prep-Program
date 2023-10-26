@@ -1,0 +1,83 @@
+Lesson 10
+Build your portfolio web page
+
+
+<!-- get together all the content that will need to be on the webpage first.
+
+
+h1 LaToya Simon
+ h3 software developer
+
+An Intro section that contains the following information:
+
+Who you are
+h2 Hi! I'm LaToya Simon
+
+
+Where you are located
+p I am a software developer from Las Vegas, Nevada.
+
+An About Me section that contains the following information:
+A description that shows your passion for web development and your willingness to work with others
+
+ p I am still finding my way in life but I know that what I'm meant to do involves bringing people closer together.
+p I'm a lifelong student and as such, I'm interested in:
+ul Putting my thoughts into actions just as a computer would do with code.
+Exploring to find workable solutions to problems, it's all about the journey, I know we'll get there eventually!
+Working with a group that helps each other to grow and succeed, while also having the occasional inside joke.
+
+p We could all use a good laugh every now and again right?
+
+hr-------------------
+
+ 
+
+One or two sentences that describe other interests you have outside of web development
+
+h2 About LaToya
+
+p Growing up in Vegas, it's always been said that I have a knack for entertaining people. Though my humor is in the moment,
+and I'm a bit of an omnivert, that just means the fun is waiting to begin! I just have to warm up first. I am a creative person 
+with many artistic hobbies that you can find out more about once you strike up the conversation. So don't be shy, I'm an open book.
+
+p I have a Bachelor's degree in Criminal Justice from the University of Nevada Las Vegas. 
+I am a survivor with epic tales of woah and success. 
+I like to write in my free time, that's a little hint. 
+As I brought my own characters to life, I began to realize that I wanted more out of mine. 
+After much research and exploration, I found myself a student at Thinkful and I can't wait to see what happens next! 
+No spoilers, but there is a pretty good chance that I'm standing on the edge of great. 
+
+p If you are looking to hire a new developer, I volunteer as tribute! I'm a diamond in the rough who is excited to work with great people
+and build great software. If you however are not looking for a new developer, I suggest you reach out anyway. 
+You never want to pass up this kind of opportunity. Plus, I'm always willing to answer a curious question or two. It never hurts to ask.
+
+hr--------------------------------------------------------------
+A Contact section that contains the following information:
+H2 Contact LaToya
+
+p I'd love to hear from you! Please feel free to contact or follow me:
+ol
+A link to your LinkedIn profile
+linkedin.com/in/latoya-simon-30693a239
+
+A link to your GitHub profile
+https://github.com/latoyadsimon
+
+A link to your email (optional)
+----------------------------------------------
+
+need to add a link later:
+
+<a href="http://www.webserver.com/folder/subfolder/filename.html">Link</a>
+
+
+<-- first start with the basic skeleton of the webpage -->
+
+-windows key + semicolon to access emoji panel
+
+©
+
+- before submitting, do a spell check in word
+
+
+https://latoyadsimon.github.io/myFirstIntroWebpageAttempt/

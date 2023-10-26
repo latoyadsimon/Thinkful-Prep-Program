@@ -1,0 +1,35 @@
+function listDestinations(destinations){
+    let response = "I can tell you about our current recommended destinations. Which one do you want to hear about?";
+    let locations = getLocations(destinations);
+    response+= locations.join("; ") + ". "; 
+    response+= "Enter a location for more info.";
+    return response;
+}
+
+function getLocations(destinations){
+    let locations = [];
+    for (let i = 0; i <destinations.length; i++){
+        let location = destinations[i].location;
+        locations.push(location);
+    }
+    return locations;
+}
+
+function listDestinations(destinations) {
+  let response =
+    "I can tell you about our current recommended destinations. Which one do you want to hear about? ";
+  let locations = getLocations(destinations);
+  response += locations.join("; ") + ". ";
+  response += "Enter a location for more info."
+  return response;
+}
+
+// v3
+function getLocations(destinations) {
+  let locations = [];
+  for (let i = 0; i < destinations.length; i++) {
+    let location = destinations[i].location;
+    locations.push(location);
+  }  
+  return locations;
+}

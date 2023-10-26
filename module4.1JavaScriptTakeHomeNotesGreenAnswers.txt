@@ -1,0 +1,204 @@
+challenge 1:
+
+/*Create a function named cartPrice to find the total cost of all the items in the shopping cart.
+
+The function should do the following:
+
+Accept an array of items as its argument
+Return the total cost of the items, as a number*/
+
+function cartPrice(items){
+  let total = 0;
+  for (let i = 0; i < items.length; i++){
+    total = total + items[i].price;
+  }
+  return total;
+    
+  
+}
+
+
+challenge 2:
+/* Create a function named mostExpensiveItemName to find the name of the highest-priced item in the shopping cart .
+
+The function should do the following:
+
+Accept an array of items as its argument
+Return the name of the most expensive item, as a string
+
+Your function mostExpensiveItemName should find the highest-priced item in the cart and return its itemName.
+
+Note: If there are no items in the array passed in, your mostExpensiveItemName should return undefined.*/
+
+function mostExpensiveItemName(items){
+  let sum = 0;
+  for (let i = 0; i < items.length; i++){
+    if (sum === 0){
+      sum = items[i].price;
+    }
+    if (sum < items[i].price){
+    
+      sum = items[i].price;
+      
+    }else{
+    sum = sum;
+    }
+  }
+  sum;
+  for (let j = 0; j < items.length; j++){
+    if(sum === items[j].price){
+      return items[j].itemName;
+    }
+  }
+    
+  
+  
+}
+
+challenge 3:
+
+/*  Part 3: Price lookup
+This is part 3. In this challenge, you'll write a function to find the price of an item in a shopping cart, given a name.
+Create a function called priceLookup to find the price of a single item.
+
+The function should do the following:
+
+Take in two arguments: an array of items and an item name as a string
+Return the price (as a number) of the item with that name*/
+
+function priceLookup(items, nameOfItem){
+  //let price = [];
+  for (let i = 0; i < items.length; i++){
+    if (nameOfItem === items[i].itemName){
+      return items[i].price;
+    }
+  }
+}
+
+
+
+challenge 4: 
+
+/* Take-home: School shopping
+Part 4: Filter by price
+This the final challenge, part 4. In this challenge, you'll write a function to find all the items in a shopping cart that are below a given price.
+Create a function called priceFilter that returns all the items whose price is under a certain amount.
+
+The function should do the following:
+
+Take in two arguments, an array of items and an amount (a number)
+Return an array of items that have a price below the amount
+Notes
+If there are no items that have a price below the amount, your priceFilter function should return an empty array [].*/
+
+function priceFilter(items, priceRange){
+  let filteredItems = [];
+  for (let i = 0; i < items.length; i++){
+    if (items[i].price < priceRange){
+      filteredItems.push(items[i]);
+    }
+  }
+  return filteredItems;
+}
+
+
+challenge 5:
+
+/* Take-home: Science questions
+Part 1: Count correct answers
+In this four-part challenge, you'll write functions to grade students' answers to a science quiz.
+
+This is part 1. In this challenge, you'll write a function to count the number of answers that are correct.
+Write a function named countCorrectAnswers that does the following:
+
+Takes in an array of student answers
+Returns the number of answers that have isCorrect set to true
+
+If none of the responses are correct, return 0.*/
+
+function countCorrectAnswers(answers){
+  let count = 0;
+  for (let i = 0; i < answers.length; i++){
+    if (answers[i].isCorrect === true){
+      count = count+1;
+    }
+  }
+  return count;
+}
+
+challenge 6:
+
+/* Take-home: Science questions
+Part 2: Filter answers by type
+In this four-part challenge, you'll write functions to grade students' answers to a science quiz.
+
+This is part 2. In this challenge, you'll write a function to filter the answers by the type of question.
+
+Write a function named filterAnswersByType that does the following:
+
+Takes in an array of student answers
+Returns an array of the answers that have isEssayQuestion set to true*/
+
+
+function filterAnswersByType(answers){
+  let essayQuestions = [];
+  for (let i = 0; i < answers.length; i++){
+    if ( answers[i].isEssayQuestion === true){
+      essayQuestions.push(answers[i]);
+    }
+  }
+  return essayQuestions;
+}
+
+
+challenge 7:
+
+/* Take-home: Science questions
+Part 3: Find student's answer to a question
+In this four-part challenge, you'll write functions to grade students' answers to a science quiz.
+
+This is part 3. In this challenge, you'll write a function to find the student's answer to a particular question.
+
+Write a function named findAnswer that does the following:
+
+Takes in two arguments: an array of student answers, and a string for the question to match
+Returns the item in the array that matches that question
+
+Notes
+If none of the student's answers match the question, return undefined.
+If more than one of the students' answers match the question, return the first one in the array.*/
+
+function findAnswer(answers, questionToMatch){
+  for(let i = 0; i < answers.length; i++){
+    if (answers[i].question === questionToMatch){
+      return answers[i];
+    }
+  }
+}
+
+
+
+challenge 8: function checkForPlagiarism(answers, snippetOfText){
+  let essayQuestions = [];
+  for (let i = 0; i < answers.length; i++){
+    if ( answers[i].isEssayQuestion === true){
+      essayQuestions.push(answers[i]);
+    }
+  }
+  //console.log(essayQuestions);
+  if (essayQuestions.length>0){
+    for (let j = 0; j < essayQuestions.length; j++){
+      if (essayQuestions[j].response.toLowerCase().includes(snippetOfText.toLowerCase())){
+        return true;
+      }
+    }
+    
+    return false;
+  }else{
+    return false;
+  } 
+
+
+}
+
+

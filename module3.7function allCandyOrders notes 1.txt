@@ -1,0 +1,335 @@
+// this one gets the candy
+function getCandy(inventory){
+  for (let i =0; i< inventory.length; i++){
+    console.log(inventory[i].candy);
+
+  }
+}
+//this one gets the weekly average to order
+function getAmount(inventory){
+  
+  for (let j = 0; j<inventory.length; j++){
+    
+    if (inventory[j].inStock < inventory[j].weeklyAverage){
+     
+      console.log(inventory[j].weeklyAverage*2);
+          
+    }else{
+  
+      console.log(inventory[j].weeklyAverage*0);
+    
+    }
+  }
+}
+
+
+--------------------
+function makeArray(inventory){
+  let candyToBuy = [];
+  let isCandyLow = true;
+  for (j = 0; j < inventory.length; j ++){
+    if (inventory[j].inStock < inventory[j].weeklyAverage){
+      //console.log (inventory[j].candy + ":" + inventory[j].weeklyAverage*2);
+      candyToBuy.push(inventory[j].candy + ":" + inventory[j].weeklyAverage*2);
+      }else{
+        //console.log (inventory[j].candy + ":" + 0);
+        candyToBuy.push(inventory[j].candy + ":" + 0);
+      }
+    
+  
+  }
+  //return candyToBuy;
+  inventory[4] = candyToBuy;
+  return inventory[4];
+  
+  
+}
+  
+console.log(makeArray(inventory)); 
+
+this one returns:
+[
+  'Twizzlers:400',
+  'Sour Patch Kids:200',
+  'Milk Duds:0',
+  'Now and Laters:0'
+]
+
+
+
+
+
+
+
+ inventory[i].candy, 
+
+= inventory[i].weeklyAverage;
+
+----------------------
+
+
+let myFavorites = {
+  movie: "Shrek",
+  song: "Bohemian Rhapsody",
+  food: "Lasagna",
+};
+for (let i = 0; i <inventory.length; i++){
+  //let candy = inventory[i].candy;
+  let amount = inventory[i].weeklyAverage*2;
+  myFavorites[inventory[i].candy] = amount;
+  
+  
+};
+
+
+console.log(myFavorites);
+
+
+
+------------------------
+
+
+
+
+
+let myFavorites = {
+  movie: "Shrek",
+  song: "Bohemian Rhapsody",
+  food: "Lasagna",
+};
+
+
+
+
+for (let i = 0; i <inventory.length; i++){
+  //let candy = inventory[i].candy;
+  if (inventory[i].inStock < inventory[i].weeklyAverage){
+    let amount = inventory[i].weeklyAverage*2;
+    myFavorites[inventory[i].candy] = amount;
+    
+
+    }else{
+      let amount = 0;
+      myFavorites[inventory[i].candy] = amount;
+    }
+  
+
+  
+  
+};
+
+
+this returns: 
+
+{
+  movie: 'Shrek',
+  song: 'Bohemian Rhapsody',
+  food: 'Lasagna',
+  Twizzlers: 400,
+  'Sour Patch Kids': 200,
+  'Milk Duds': 0,
+  'Now and Laters': 0
+
+
+
+}
+
+
+-----------------------------
+
+
+let myFavorites = {
+  
+};
+for (let i = 0; i <inventory.length; i++){
+  //let candy = inventory[i].candy;
+  if (inventory[i].inStock < inventory[i].weeklyAverage){
+    let amount = inventory[i].weeklyAverage*2;
+    myFavorites[inventory[i].candy] = amount;
+    
+
+    }else{
+      let amount = inventory[i].weeklyAverage*0;
+      myFavorites[inventory[i].candy] = amount;
+    }
+  
+  
+
+  
+  
+};
+
+returns: 
+{
+  Twizzlers: 400,
+  'Sour Patch Kids': 200,
+  'Milk Duds': 0,
+  'Now and Laters': 0
+}
+
+
+---------------------
+
+let orders = {};
+
+function allCandyOrders(inventory){
+  
+  
+  for (let i = 0; i <inventory.length; i++){
+   
+  //let candy = inventory[i].candy;
+    if (inventory[i].inStock < inventory[i].weeklyAverage){
+      let amount = inventory[i].weeklyAverage*2;
+      orders[inventory[i].candy] = amount;
+    
+
+      }else{
+      let amount = inventory[i].weeklyAverage*0;
+      orders[inventory[i].candy] = amount;
+      }
+    
+  }
+  return orders;
+  
+  
+
+  
+  
+}
+
+console.log(allCandyOrders(inventory));
+
+
+returns:
+{
+  Twizzlers: 400,
+  'Sour Patch Kids': 200,
+  'Milk Duds': 0,
+  'Now and Laters': 0
+}
+
+
+----------------------------
+
+
+
+
+
+let orders = {};
+
+
+function allCandyOrders(inventory){
+  
+  
+  for (let i = 0; i <inventory.length; i++){
+    
+    if (inventory !== []){
+    
+  //let candy = inventory[i].candy;
+      if (inventory[i].inStock < inventory[i].weeklyAverage){
+        let amount = inventory[i].weeklyAverage*2;
+        orders[inventory[i].candy] = amount;
+    
+        }else{
+        let amount = inventory[i].weeklyAverage*0;
+        orders[inventory[i].candy] = amount;
+        }
+      
+    } else if (inventory = []){
+      return orders;
+    }
+ 
+  }
+  
+   
+  
+  return orders;
+ }
+
+-------------------------------
+from 2.9
+
+let myFavorites = {
+  movie: "Shrek",";", 30,
+  song: "Bohemian Rhapsody",
+  food: "Lasagna",
+};
+
+console.log(myFavorites.movie); // 'Shrek'
+console.log(myFavorites.song); // 'Bohemian Rhapsody'
+console.log(myFavorites.food); // 'Lasagna'
+
+
+
+_____________---------------------
+
+
+
+let myFavorites = {
+  
+};
+for (let i = 0; i <inventory.length; i++){
+  //let candy = inventory[i].candy;
+  if (inventory[i].inStock < inventory[i].weeklyAverage){
+    let amount = inventory[i].weeklyAverage*2;
+    myFavorites[inventory[i].candy] = amount;
+    
+
+    }else{
+      let amount = inventory[i].weeklyAverage*0;
+      myFavorites[inventory[i].candy] = amount;
+    }
+  
+  
+
+  
+  
+};
+
+console.log(myFavorites);
+
+returns:
+{
+  Twizzlers: 400,
+  'Sour Patch Kids': 200,
+  'Milk Duds': 0,
+  'Now and Laters': 0
+}
+
+-----------------
+
+let orders = {};
+
+
+function allCandyOrders(inventory){
+  
+  if (inventory.length>0){
+    for (let i = 0; i <inventory.length; i++){
+      if (inventory[i].inStock < inventory[i].weeklyAverage){
+        let amount = inventory[i].weeklyAverage*2;
+        orders[inventory[i].candy] = amount;
+        
+        
+    
+        }else{
+          let amount = inventory[i].weeklyAverage*0;
+          orders[inventory[i].candy] = amount;
+          
+        }
+    }
+    
+  }else{
+    let amount = null;
+    orders = {};
+    
+  }
+  return orders;
+  
+ 
+}
+
+finally got it right!!!!!!!!!! with no help from any damn body!!!!!!!!!!!
+
+
+
+

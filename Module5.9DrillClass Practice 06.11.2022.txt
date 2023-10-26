@@ -1,0 +1,123 @@
+Drill: Class Practice 06/11/2022
+
+Follow these tasks to complete this drill.
+
+
+1. Center the text: Create a class with a relevant name, like .text-center, to center certain text. 
+Assign the class to both the logo and the copyright text.
+
+2.Create container background colors: Create two classes: one that gives a container a dark background with light text, 
+and one that gives a container a light background with dark text. Assign the dark background class to the header and 
+footer of the code sample, and assign the light background class to the <main> HTML element.
+
+3. Add a wrapper: Create a class with the name .wrapper. This class should have a set width of 300 to 400 pixels 
+and the rule margin: auto;. (You'll explore what this code does during the box model discussion later in this lesson.) 
+Assign this class to each of the three <div> containers inside of <header>, <main>, and <footer>.
+
+
+Index.html (starting place)
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<header>
+    <div>
+		  <h1>Logo</h1>
+    </div>
+	</header>
+
+	<main>
+		<div>
+			<h2>Centered Title</h2>
+			<p>This is a simple demo showcasing how a few classes can be applied to HTML.</p>
+		</div>
+	</main>
+
+	<footer>
+		<div>
+			<p>Copyright</p>
+		</div>
+	</footer>
+
+
+	<script src="script.js">
+	</script>
+</body>
+
+</html>
+
+--------------------------------
+
+Answer:
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<header class="dark-background">
+    <div class="wrapper">
+		  <h1 class="text-centered">Logo</h1>
+    </div>
+	</header>
+
+	<main class="light-background">
+		<div class="wrapper">
+			<h2>Centered Title</h2>
+			<p>This is a simple demo showcasing how a few classes can be applied to HTML.</p>
+		</div>
+	</main>
+
+	<footer class="dark-background">
+		<div class="wrapper">
+			<p class="text-centered">Copyright</p>
+		</div>
+	</footer>
+
+
+	<script src="script.js">
+	</script>
+</body>
+
+</html>
+
+
+style.css
+
+
+.text-centered {
+  text-align: center;
+}
+
+.dark-background {
+  background-color: #1E1E1E;
+  color: white;
+}
+
+.light-background {
+  background-color: #c8d2e0;
+  color: #1E1E1E;
+}
+
+.wrapper {
+  width: 300px;
+  margin: auto;
+}
